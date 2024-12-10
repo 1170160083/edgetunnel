@@ -1,69 +1,69 @@
 
-import { connect } from 'cloudflare:sockets';
+进口 { 连接 } 从……起 'cloudflare：套接字';
 
-let userID = '';
-let proxyIP = '';
-let sub = '';
-let subConverter = 'SUBAPI.fxxk.dedyn.io';
-let subConfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_MultiMode.ini";
-let subProtocol = 'https';
-let subEmoji = 'true';
-let socks5Address = '';
-let parsedSocks5Address = {}; 
-let enableSocks = false;
+让 userid='123456';
+让 ProxyIP='';
+让 潜水艇='';
+让 subConverter='SUBAPI.fxxk.dedyn.io';
+让 子配置="https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_MultiMode.ini";
+让 子协议='https';
+让 subEmoji='true';
+让 socks5Address='';
+让 parsedSocks5Address={};
+让 enableSocks=假的;
 
-let fakeUserID ;
-let fakeHostName ;
-let noTLS = 'false'; 
-const expire = 4102329600;//2099-12-31
-let proxyIPs;
-let socks5s;
-let go2Socks5s = [
+让 fakeUserID;
+让 fakeHostName;
+让 noTLS='false';
+Const 到期=4102329600;//2099-12-31
+让 proxyIPs;
+让 socks5s;
+让 go2Socks5s=[
 	'*ttvnw.net',
 	'*tapecontent.net',
 	'*cloudatacdn.com',
 	'*.loadshare.org',
 ];
-let addresses = [];
-let addressesapi = [];
-let addressesnotls = [];
-let addressesnotlsapi = [];
-let addressescsv = [];
-let DLS = 8;
-let remarkIndex = 1;//CSV备注所在列偏移量
-let FileName = atob('ZWRnZXR1bm5lbA==');
-let BotToken;
-let ChatID; 
-let proxyhosts = [];
-let proxyhostsURL = '';
-let RproxyIP = 'false';
-let httpsPorts = ["2053","2083","2087","2096","8443"];
-let 有效时间 = 7;
-let 更新时间 = 3;
-let userIDLow;
-let userIDTime = "";
-let proxyIPPool = [];
-let path = '/?ed=2560';
-let 动态UUID;
-export default {
-	async fetch(request, env, ctx) {
-		try {
-			const UA = request.headers.get('User-Agent') || 'null';
-			const userAgent = UA.toLowerCase();
-			userID = env.UUID || env.uuid || env.PASSWORD || env.pswd || userID;
-			if (env.KEY || env.TOKEN || (userID && !isValidUUID(userID))) {
-				动态UUID = env.KEY || env.TOKEN || userID;
-				有效时间 = Number(env.TIME) || 有效时间;
-				更新时间 = Number(env.UPTIME) || 更新时间;
-				const userIDs = await 生成动态UUID(动态UUID);
-				userID = userIDs[0];
-				userIDLow = userIDs[1];
+让 地址=[];
+让 addressapi=[];
+让 addressnotls=[];
+让 addressnotlsapi=[];
+让 addresscsv=[];
+让 DLS=8;
+让 remarkIndex=1;//CSV备注所在列偏移量
+让 文件名=atob('ZWRnZXR1bm5lbA==');
+让 BotToken;
+让 chatid;
+让 代理主机=[];
+让 proxyhostsURL='';
+让 RproxyIP='false';
+让 httpsPorts=["2053","2083","2087","2096","8443"];
+让 有效时间=7;
+让 更新时间=3;
+让 userIDLow;
+让 userIDTime=“”;
+让 proxyIPPool=[];
+让 路径='/？Ed=2560';
+让 动态UUID;
+出口 默认 {
+	异步 取来(请求,env,CTX) {
+		尝试 {
+			Const UA=请求。页眉.得到('用户代理')||'Null';
+			Const UserAgent=UA。toLowerCase();
+userid=环境。UUID||env.UUID||env.密码||env.PSWD||userID；
+			如果 (env.钥匙||env.令牌||(userid&&！isValidUUID(userid))) {
+动态UUID=环境钥匙||env.令牌||userID；
+有效时间 =数量(env.时间)|| 有效时间;
+更新时间 =数量(env.正常运行时间)|| 更新时间;
+				Const userids=等候 生成动态UUID(动态UUID);
+userid=用户ID[0];
+userIDLow=用户ID[1];
 			}
 
-			if (!userID) {
-				return new Response('请设置你的UUID变量，或尝试重试部署，检查变量是否生效？', { 
-					status: 404,
-					headers: {
+			如果 (！userid) {
+				返回 新的响应('请设置你的UUID变量，或尝试重试部署，检查变量是否生效？ ',{ 
+					状态:404,
+					页眉:{
 						"Content-Type": "text/plain;charset=utf-8",
 					}
 				});
