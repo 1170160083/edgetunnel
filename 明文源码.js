@@ -3,8 +3,8 @@ import { connect } from 'cloudflare:sockets';
 
 let userID = 'b9b598e9-1899-4ca0-8e73-17c43f6165f5';
 let proxyIP = 'proxyip.tp22031.s10.090227.xyz';
-let sub = '192.168.5.145:18080';
-let subConverter = '192.168.5.145:25500';
+let sub = '';
+let subConverter = '';
 let subConfig = "https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/Clash-LIAN.ini";
 let subProtocol = 'https';
 let subEmoji = 'true';
